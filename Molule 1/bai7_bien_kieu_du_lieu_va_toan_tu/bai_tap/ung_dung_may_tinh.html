@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+    <form>
+        <h2>Calculator</h2>
+        <input id="numberOne" type="text"/>
+        <input id="numberTwo" type="text" style="margin-bottom: 10px"/> <br/>
+        <button type="button" onclick="myFunctionOne()">Addition (+)</button>
+        <button type="button" onclick="myFunctionTwo()">Subtraction (-)</button>
+        <button type="button" onclick="myFunctionThree()">Multiplication (x)</button>
+        <button type="button" onclick="myFunctionFour()">Division (/)</button>
+        <p id="result"></p>
+        <script>
+            function myFunctionOne() {
+                let a = parseFloat(document.getElementById('numberOne').value);
+                let b = parseFloat(document.getElementById('numberTwo').value);
+                result = a + b;
+                document.getElementById('result').innerHTML = "Result:" + result;
+            }
+            function myFunctionTwo() {
+                let a=parseFloat(document.getElementById('numberOne').value);
+                let b=parseFloat(document.getElementById('numberTwo').value);
+                result =a-b;
+                document.getElementById('result').innerHTML="Result:"+ result;
+            }
+            function myFunctionThree() {
+                let a=parseFloat(document.getElementById('numberOne').value);
+                let b=parseFloat(document.getElementById('numberTwo').value);
+                result =a*b;
+                document.getElementById('result').innerHTML="Result:"+ result;
+            }
+            function myFunctionFour() {
+                let a=parseFloat(document.getElementById('numberOne').value);
+                let b=parseFloat(document.getElementById('numberTwo').value);
+                result =a/b;
+                document.getElementById('result').innerHTML="Result:"+ result;
+            }
+        </script>
+    </form>
+</body>
+</html>
+// let numberOne=document.getElementById('numberOne').value;
+// let numberTwo=document.getElementById('numberTwo').value;
+// let a=parseFloat(numberOne);
+// let b=parseFloat(numberTwo);
