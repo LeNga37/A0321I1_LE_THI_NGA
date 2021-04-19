@@ -6,9 +6,11 @@
 </head>
 <body>
     <script>
-        let BMI=parseInt(prompt('inputBMI'));
+        let weight=parseFloat(prompt('inputWeight'));
+        let height=parseFloat(prompt('inputHeight'));
+        let BMI=weight/(height*height);
         if(BMI<18.5){
-            alert('Interpretation')
+            alert('Underweight')
         }else if(BMI<25){
             alert('Normal')
         }else if(BMI<30){
