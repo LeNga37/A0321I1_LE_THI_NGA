@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau_truc_dieu_kien_2</title>
+</head>
+<body>
+    <form>
+        <h3>Bài 1: Chuyển từ độ C sang độ F.</h3>
+        <button type="button" onclick="One()">Start</button>
+        <h3>Bài 2: Chuyển từ mét sang feet:</h3>
+        <button type="button" onclick="Two()">Start</button>
+        <h3>Bài 3: Tính diện tích hình vuông khi biết cạnh a.</h3>
+        <button type="button" onclick="Three()">Start</button>
+        <h3>Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.</h3>
+        <button type="button" onclick="Four()">Start</button>
+        <h3>Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</h3>
+        <button type="button" onclick="Five()">Start</button>
+        <h3>Bài 6: Giải phương trình bậc 1.</h3>
+        <button type="button" onclick="Six()">Start</button>
+        <h3>Bài 7: Giải phương trình bậc 2.</h3>
+        <button type="button" onclick="Seven()">Start</button>
+        <h3>Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.</h3>
+        <button type="button" onclick="Eight()">Start</button>
+        <h3>Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác là:a,b,c > 0; a + b > c; b + c > a; a + c > b</h3>
+        <button type="button" onclick="Nine()">Start</button>
+        <h3>Bài 10: Viết chương trình tính giá điện.</h3>
+        <button type="button" onclick="Ten()">Start</button>
+        <h3>Bài 11: Viết chương trình tính thuế thu nhập cá nhân.</h3>
+        <button type="button" onclick="Eleven()">Start</button>
+        <h3>Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</h3>
+        <button type="button" onclick="Twelve()">Start</button>
+    </form>
+    <script>
+        function One() {
+            let doC = prompt('input doC');
+            let doF;
+            if (isNaN(doC)) {
+                alert("Please input the number");
+            } else {
+               let c=parseFloat(doC);
+                doF=(5*c-160)/9;
+                alert("Do F:"+doF);
+            }
+        }
+        function Two() {
+            let met = prompt('input Met');
+            let ft;
+            if (isNaN(met)) {
+                alert("Please input the number");
+            } else {
+                if (met<0){
+                    alert("Please input positive number");
+                } else {
+                    let m=parseFloat(met);
+                    ft=m*3.2808;
+                    alert("Feet:"+ft);
+                }
+            }
+        }
+        function Three() {
+            let a= prompt('input canh a');
+            let S;
+            if (isNaN(a)){
+                alert('Please input the number');
+            } else{
+                if(a<0){
+                    alert('Please input positive number');
+                }else {
+                    a=parseFloat(a);
+                    S=a*a;
+                    alert('S:'+S)
+                }
+            }
+        }
+        function Four() {
+            let a=prompt('input Weight');
+            let b=prompt('input Height');
+            let S;
+            if(isNaN(a,b)){
+                alert('Please input the number');
+            } else{
+                if(a<0||b<0){
+                    alert('Please input positive number');
+                }else {
+                    a=parseFloat(a);
+                    b=parseFloat(b);
+                    S=a*b;
+                    alert('S:' +S)
+                }
+            }
+        }
+        function Five() {
+            let a=prompt('input a');
+            let b=prompt('input b');
+            let S;
+            if(isNaN(a,b)){
+                alert('Please input the number');
+            } else{
+                if(a<0||b<0){
+                    alert('Please input positive number');
+                }else {
+                    a=parseFloat(a);
+                    b=parseFloat(b);
+                    S=(a*b)/2;
+                    alert('S:' +S)
+                }
+            }
+        }
+        function Six() {
+            let a=parseFloat(prompt('input a'));
+            let b=parseFloat(prompt('input b'));
+            let x;
+            if(isNaN(a,b)){
+                alert('Please input the number')
+            } else if(a==0){
+                if ((b==0)){
+                    alert('phuong trinh co vo so nghiem');
+                }else {
+                    alert('phuong trinh vo nghiem');
+                }
+            }else {
+                x=-b/a;
+                alert('nghiem cua phuong trinh la:'+x);
+            }
+        }
+        function Seven() {
+            let a=prompt('input a');
+            let b=prompt('input b');
+            let c=prompt('input c');
+            let x1;
+            let x2;
+            let x;
+            let p;
+            p=(b*b)-4*a*c;
+            if(a==0){
+                alert('Please input a except 0')
+            }else {
+                a=parseFloat(a);
+                b=parseFloat(b);
+                c=parseFloat(c);
+                if(p>0){
+                    x1=(-b+Math.sqrt(p))/2*a;
+                    x2=(-b-Math.sqrt(p))/2*a;
+                    alert('phuong trinh co 2 nghiem');
+                    alert('x1= '+x1);
+                    alert('x2= '+x2);
+                }else if(p==0){
+                    x=-b/(2*a);
+                    alert('nghiem cua phuong trinh la x= '+x);
+                }else {
+                    alert('phuong trinh vo nghiem');
+                }
+            }
+        }
+        function Eight() {
+            let age = parseFloat(prompt('input age'));
+            if(Number.isInteger(age)&&age<=0||age>120){
+                alert('Vui long nhap so nguyen lon hon 0 và nho hon 120');
+                }else if(Number.isInteger(age)&&age>0&&age<=120){
+                alert(age+' la tuoi cua mot nguoi');
+                }else {
+                alert('Vui long nhap so nguyen')
+            }
+        }
+        function Nine() {
+            let canha=prompt('input number a');
+            let canhb=prompt('input number b');
+            let canhc=prompt('input number c');
+            let a;
+            let b;
+            let c;
+            a=parseFloat(canha);
+            b=parseFloat(canhb);
+            c=parseFloat(canhc);
+            if(isNaN(a,b,c)){
+                alert('Please input the number')
+            }else{
+                if(a>0 && b>0 && c>0 && a+b>c && b+c>a && a+c>b){
+                    alert('a, b, c la canh cua 1 tam giac')
+                }else {
+                    alert('a, b, c khong phai la canh cua 1 tam giac')
+                }
+            }
+        }
+    </script>
+</body>
+</html>
