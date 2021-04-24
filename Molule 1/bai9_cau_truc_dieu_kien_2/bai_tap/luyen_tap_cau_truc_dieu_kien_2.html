@@ -7,32 +7,32 @@
 <body>
     <form>
         <h3>Bài 1: Chuyển từ độ C sang độ F.</h3>
-        <button type="button" onclick="One()">Start</button>
+        <button type="button" onclick="taskOne()">Start</button>
         <h3>Bài 2: Chuyển từ mét sang feet:</h3>
-        <button type="button" onclick="Two()">Start</button>
+        <button type="button" onclick="taskTwo()">Start</button>
         <h3>Bài 3: Tính diện tích hình vuông khi biết cạnh a.</h3>
-        <button type="button" onclick="Three()">Start</button>
+        <button type="button" onclick="taskThree()">Start</button>
         <h3>Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.</h3>
-        <button type="button" onclick="Four()">Start</button>
+        <button type="button" onclick="taskFour()">Start</button>
         <h3>Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</h3>
-        <button type="button" onclick="Five()">Start</button>
+        <button type="button" onclick="taskFive()">Start</button>
         <h3>Bài 6: Giải phương trình bậc 1.</h3>
-        <button type="button" onclick="Six()">Start</button>
+        <button type="button" onclick="taskSix()">Start</button>
         <h3>Bài 7: Giải phương trình bậc 2.</h3>
-        <button type="button" onclick="Seven()">Start</button>
+        <button type="button" onclick="taskSeven()">Start</button>
         <h3>Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.</h3>
-        <button type="button" onclick="Eight()">Start</button>
+        <button type="button" onclick="taskEight()">Start</button>
         <h3>Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác là:a,b,c > 0; a + b > c; b + c > a; a + c > b</h3>
-        <button type="button" onclick="Nine()">Start</button>
+        <button type="button" onclick="taskNine()">Start</button>
         <h3>Bài 10: Viết chương trình tính giá điện.</h3>
-        <button type="button" onclick="Ten()">Start</button>
+        <button type="button" onclick="taskTen()">Start</button>
         <h3>Bài 11: Viết chương trình tính thuế thu nhập cá nhân.</h3>
-        <button type="button" onclick="Eleven()">Start</button>
+        <button type="button" onclick="taskEleven()">Start</button>
         <h3>Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</h3>
-        <button type="button" onclick="Twelve()">Start</button>
+        <button type="button" onclick="taskTwelve()">Start</button>
     </form>
     <script>
-        function One() {
+        function taskOne() {
             let doC = prompt('input doC');
             let doF;
             if (isNaN(doC)) {
@@ -43,7 +43,7 @@
                 alert("Do F:"+doF);
             }
         }
-        function Two() {
+        function taskTwo() {
             let met = prompt('input Met');
             let ft;
             if (isNaN(met)) {
@@ -58,7 +58,7 @@
                 }
             }
         }
-        function Three() {
+        function taskThree() {
             let a= prompt('input canh a');
             let S;
             if (isNaN(a)){
@@ -73,7 +73,7 @@
                 }
             }
         }
-        function Four() {
+        function taskFour() {
             let a=prompt('input Weight');
             let b=prompt('input Height');
             let S;
@@ -90,7 +90,7 @@
                 }
             }
         }
-        function Five() {
+        function taskFive() {
             let a=prompt('input a');
             let b=prompt('input b');
             let S;
@@ -107,7 +107,7 @@
                 }
             }
         }
-        function Six() {
+        function taskSix() {
             let a=parseFloat(prompt('input a'));
             let b=parseFloat(prompt('input b'));
             let x;
@@ -124,7 +124,7 @@
                 alert('nghiem cua phuong trinh la:'+x);
             }
         }
-        function Seven() {
+        function taskSeven() {
             let a=prompt('input a');
             let b=prompt('input b');
             let c=prompt('input c');
@@ -153,7 +153,7 @@
                 }
             }
         }
-        function Eight() {
+        function taskEight() {
             let age = parseFloat(prompt('input age'));
             if(Number.isInteger(age)&&age<=0||age>120){
                 alert('Vui long nhap so nguyen lon hon 0 và nho hon 120');
@@ -163,7 +163,7 @@
                 alert('Vui long nhap so nguyen')
             }
         }
-        function Nine() {
+        function taskNine() {
             let canha=prompt('input number a');
             let canhb=prompt('input number b');
             let canhc=prompt('input number c');
@@ -181,6 +181,46 @@
                 }else {
                     alert('a, b, c khong phai la canh cua 1 tam giac')
                 }
+            }
+        }
+        function taskTen() {
+            let soDien=parseFloat(prompt('input so dien trong thang'));
+            let tienDien;
+            if(soDien<0){
+                alert('Vui long nhap so dien su dung trong thang')
+            }else if(soDien<50){
+                tienDien=soDien*3000;
+                alert('tien dien la: ' + tienDien);
+            } else if(soDien<100){
+                tienDien=soDien*3500;
+                alert('tien dien la: ' + tienDien);
+            }else {
+                tienDien=soDien*4000;
+                alert('tien dien la: ' + tienDien)
+            }
+        }
+        function taskEleven() {
+                let salary=parseFloat(prompt('input salary'));
+                let tax;
+                if (salary<=0){
+                    alert('Hay nhap thu nhap cua ban')
+                }else if (salary>=15000000){
+                    tax=(salary/100)*5;
+                    alert('thue thu nhap ca nhan la: '+tax);
+                }else{
+                    alert('thu nhap chua can dong thue')
+                }
+        }
+        function taskTwelve() {
+            let money=parseFloat(prompt('input so tien vay'));
+            let month=parseInt(prompt('input so thang vay,'));
+            let laisuathangthang=parseFloat(prompt('input lai suat(%)'));
+            let laisuat;
+            if(money<=0||month<=0||laisuathangthang<0||isNaN(money)||isNaN(month)||isNaN(laisuathangthang)){
+                alert('vui long nhap so thich hop')
+            }else {
+                laisuat = money*month*laisuathangthang/100;
+                alert('lai suat '+laisuathangthang+'vay la: '+laisuat);
             }
         }
     </script>
