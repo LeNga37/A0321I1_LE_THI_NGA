@@ -5,61 +5,67 @@
     <title>Luyen_tap_vong_lap_2</title>
 </head>
 <body>
-    <h3>Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.</h3>
+    <h3>Bài 1: In dãy Fibonaci</h3>
     <button type="button" onclick="taskOne()">Start</button>
     <p id="result1"></p>
-    <h3>Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.</h3>
+    <h3>Bài 2: Tính giai thừa của một số nguyên dương</h3>
     <button type="button" onclick="taskTwo()">Start</button>
     <p id="result2"></p>
-    <h3>Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.</h3>
+    <h3>Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau</h3>
     <button type="button" onclick="taskThree()">Start</button>
     <p id="result3"></p>
-    <h3>Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.</h3>
+    <h3>Bài 4: In hình chữ nhật</h3>
     <button type="button" onclick="taskFour()">Start</button>
     <p id="result4"></p>
-    <h3>Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.</h3>
+    <h3>Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</h3>
     <button type="button" onclick="taskFive()">Start</button>
     <p id="result5"></p>
-    <h3>Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</h3>
+    <h3>Bài 6: In hình trái tim</h3>
     <button type="button" onclick="taskSix()">Start</button>
     <p id="result6"></p>
 
     <script>
-        function taskThree() {
-            // let star1 = '';
-            let e = document.getElementById('result3');
-            // for (let i = 1; i <= 5; i++) {
-            //     star1 = star1 + '*';
-            //     e.innerHTML = e.innerHTML + star1 + '<br>';
-            // }
-            //
-            // e.innerHTML = e.innerHTML + '<br>';
-            //
-            // for (let i = 5; i >= 1; i--) {
-            //     let star2 = '';
-            //     for (let j = 1; j <= i; j++) {
-            //         star2 = star2 + '*';
-            //     }
-            //     e.innerHTML = e.innerHTML + star2 + '<br>';
-            // }
-            // e.innerHTML = e.innerHTML + '<br>';
-
-            let i;
-            let j;
-            // for (i = 1; i <= 5; i++) {
-            //     let star3 = '';
-            //     for (j = 5; j >= 1; j--) {
-            //         star3 = star3 + '' + '*'
-            //     }
-            //     e.innerHTML = e.innerHTML + star3 + '<br>';
-            for(j=5;j>=1;j--){
-                let star3='';
-                for(i=1;i<=4;i++){
-                    star3=star3+'';
-                }
-                e.innerHTML = e.innerHTML + star3 +'*'+'<br>'
+        function taskOne() {
+            let n=parseInt(prompt('Nhap so luong so can in cua day Fibonaci'));
+            let a=0;
+            let b=1;
+            let e=document.getElementById('result1');
+            e.innerHTML=e.innerHTML+a+', ';
+            for(let i=1;i<n;i++){
+                let c=a+b;
+                a=b;
+                b=c;
+                e.innerHTML=e.innerHTML+a+', ';
             }
-            // e.innerHTML = e.innerHTML + '*'
+        }
+        function taskTwo() {
+            let n=parseInt(prompt('Nhap so de tinh giai thua'));
+            let a=1;
+            for(let i=1;i<=n;i++){
+                a=a*i;
+                document.getElementById('result2').innerHTML=n+'!= '+a
+            }
+        }
+
+        function taskThree() {
+            let star1 = '';
+            let e = document.getElementById('result3');
+            for (let i = 1; i <= 5; i++) {
+                star1 = star1 + '*';
+                e.innerHTML = e.innerHTML + star1 + '<br>';
+            }
+
+            e.innerHTML = e.innerHTML + '<br>';
+
+            for (let i = 5; i >= 1; i--) {
+                let star2 = '';
+                for (let j = 1; j <= i; j++) {
+                    star2 = star2 + '*';
+                }
+                e.innerHTML = e.innerHTML + star2 + '<br>';
+            }
+            e.innerHTML = e.innerHTML + '<br>';
+
         }
     </script>
 </body>

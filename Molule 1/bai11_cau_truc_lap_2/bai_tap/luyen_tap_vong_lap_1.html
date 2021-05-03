@@ -32,31 +32,13 @@
 </form>
 <script>
     function taskOne() {
-        // let e=document.getElementById('result1');
-        // for(let i=1;i<=100;i++){
-        //     if(i==99){
-        //         i='da hoan thanh'
-        //     }
-        //     e.innerHTML=e.innerHTML+i+', ';
-            let e=document.getElementById('result1');
-            let a=0;
-            for(let i=1;i<=100;i++){
-                a=a+1;
-                if(i==99){
-                    a='da hoan thanh'
-                }else {
-                    i=a;
-                }
-                e.innerHTML=e.innerHTML+a+', ';
+        for(let i=1;i<=100;i++){
+            if(i==3){
+                alert('da hoan thanh')
+            }
         }
-        // for(let i=1;i<=100;i++){
-        //     alert(i);
-        //     if(i==3){
-        //         alert('da hoan thanh')
-        //     }
-        // }
-
     }
+
     function taskTwo() {
         let nhietDo=parseFloat(prompt('Input nhiet do'));
         if(nhietDo>100){
@@ -100,6 +82,7 @@
         // document.getElementById('result3').innerHTML=a.join(', ');
         // console.log(a.reduce((a1, b) => a1 + b, 0))
     }
+
     function taskFour() {
         let a=0;
         let b=1;
@@ -114,9 +97,9 @@
                 document.getElementById('result4').innerHTML= 'Số đầu tiên trong dãy fibonacci chia hết cho 5 là: ' + c;
                 break;
             }
-
         }
     }
+
     function taskFive() {
         let a=0;
         let b=1;
@@ -132,6 +115,7 @@
         }
         document.getElementById('result5').innerHTML='Tổng của 20 số đầu tiên trong dãy fibonacci là: '+sum;
     }
+
     function taskSix() {
         let counter=0;
         let i=1;
@@ -181,7 +165,7 @@
 
         let e=document.getElementById('result7');
         for(let i=1;i<=100;i++){
-            let a=''
+            let a='';
             if(i%3==0){
                 a=a+'Fizz';
             }
