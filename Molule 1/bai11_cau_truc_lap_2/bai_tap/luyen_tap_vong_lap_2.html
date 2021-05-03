@@ -66,6 +66,56 @@
             }
             e.innerHTML = e.innerHTML + '<br>';
 
+            for(let i=1;i<=5;i++){
+                for(let j=4;j>=i;j--){
+                    e.innerHTML=e.innerHTML+"&nbsp;&nbsp";
+                }
+                for(let k=1;k<=i;k++){
+                    e.innerHTML=e.innerHTML+'*'
+                }
+                e.innerHTML=e.innerHTML+'<br>'
+            }
+
+            e.innerHTML = e.innerHTML + '<br>';
+           
+
+            for(let i=1;i<=5;i++){
+                for(let j=1;j<i;j++){
+                    e.innerHTML=e.innerHTML+"&nbsp;&nbsp";
+                }
+                for(let k=5;k>=i;k--){
+                    e.innerHTML=e.innerHTML+'*'
+                }
+                e.innerHTML=e.innerHTML+'<br>';
+            }
+        }
+
+        let e=document.getElementById('result4');
+        function taskFour() {
+            for(let i=1;i<=7;i++){
+                for(let j=1;j<=21;j++){
+                    if(i==1||i==7||j==1||j==21){
+                        e.innerHTML=e.innerHTML+'*';
+                    }else {
+                        e.innerHTML=e.innerHTML+"&nbsp;&nbsp";
+                    }
+                }
+                e.innerHTML=e.innerHTML+'<br>';
+            }
+        }
+
+
+        function taskFive() {
+            let e=document.getElementById('result5');
+            let money=parseFloat(prompt('Nhap  so tien vay'));
+            let month=parseInt(prompt('Nhap so thang vay'));
+            let interest=parseFloat(prompt('Nhap lai suat hang thang'));
+            let tienLai=0;
+            for(let i=1;i<=month;i++){
+                tienLai=money*(interest/100);
+                money=money+money*(interest/100);
+                e.innerHTML=tienLai;
+            }
         }
     </script>
 </body>
