@@ -54,6 +54,86 @@
         }
         document.write('Max la: '+max+'  Vi tri: '+index);
     }
+    function taskThree() {
+        let arrayNumber=[24,55,765,876,36,2336,256,7,42,15,567,26,2664,64,46,456,25,255,2674,868];
+        let max=arrayNumber[0];
+        let avg=0;
+        for(let i=0;i<arrayNumber.length;i++){
+            if(arrayNumber[i]>max){
+                max=arrayNumber[i];
+                avg=(avg+arrayNumber[i])/i;
+            }
+        }
+        document.write('Max la: '+ max +'<br>'+ 'Avg: '+avg);
+    }
+    function taskFour() {
+        let arrayNumber=new Array(10);
+        for(let i=0;i<10;i++){
+            arrayNumber[i]=new Array(10);
+            let number=parseInt(prompt('Nhap cac gia tri so nguyen cua mang'));
+            arrayNumber[i]=number;
+        }
+        arrayNumber.reverse();
+        document.write(arrayNumber);
+    }
+    function taskFive() {
+        let arrayNumber=[-3,55,-765,876,-36,-2336,256,7,-42,15,567,-26,2664,-64,-46,456,-25,-255,-2674,868,-3,-63,-76];
+        let soNguyenAm=[];
+        for(let i=0;i<arrayNumber.length;i++){
+            if(arrayNumber[i]<0){
+                soNguyenAm.push(arrayNumber[i]);
+            }
+        }
+        document.write('So luong so nguyen am trong chuoi la: '+ soNguyenAm.length)
+    }
+    function taskSix() {
+        let arrayNumber = new Array(10);
+        let check='';
+        let soNguyenV = parseInt(prompt('Nhap so nguyen V can kiem tra: '));
+        for (let i = 0; i < 10; i++) {
+            // arrayNumber[i] = new Array(10);
+            let number = parseInt(prompt('Nhap cac gia tri so nguyen cua mang'));
+            arrayNumber[i] = number;
+            if (soNguyenV === arrayNumber[i]){
+                check=true;
+            }
+        }
+        if (check) {
+            document.write("V is in the array");
+        } else {
+            document.write("V is not in the array")
+        }
+
+    }
+    function taskSeven() {
+        let arrayNumber = new Array(10);
+        let arrayNew = [];
+        let soNguyenV = parseInt(prompt('nhap so nguyen V'));
+        for (let i = 1; i <= 10; i++) {
+            // arrayNumber[i] = new Array(10);
+            let number = parseInt(prompt('Nhap cac gia tri so nguyen cua mang'));
+            arrayNumber[i] = number;
+            if (arrayNumber[i] === soNguyenV) {
+                document.write('V is in the array'+'<br/>')
+            } else {
+                arrayNew.push(arrayNumber[i]);
+            }
+        }
+        document.write('New Array: '+ arrayNew.join(','))
+    }
+
+    let arrayNum=new Array(10);
+    let neuArray=[];
+    function taskEight() {
+        for(let i=0;i<=10;i++){
+            let num=parseInt(prompt('Nhap 10 phan tu so nguyen cua chuoi'));
+            arrayNum[i]=num;
+            arrayNum.sort(function (a,b) {return b-a});
+            neuArray=arrayNum;
+        }
+        document.write('Mang da duoc sap xem thư tư giảm dan: '+neuArray);
+    }
+
 </script>
 </body>
 </html>
