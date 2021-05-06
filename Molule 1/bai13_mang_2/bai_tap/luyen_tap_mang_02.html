@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen_tap_mang_02</title>
+</head>
+<body>
+<!--<h3>Bài 1: Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.</h3>-->
+<button type="button" onclick="taskOne()">Bai 1</button>
+<!--<h3>Bài 2: Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.</h3>-->
+<button type="button" onclick="taskTwo()">Bai 2</button>
+<!--<h3>Bài 3: Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.</h3>-->
+<button type="button" onclick="taskThree()">Bai 3</button></p>
+<!--<h3>Bài 4: Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.</h3>-->
+<button type="button" onclick="taskFour()">Bai 4</button>
+<!--<h3>Bài 5: Viết chương trình đếm số nguyên âm trong một chuỗi</h3>-->
+<button type="button" onclick="taskFive()">Bai 5</button>
+<!--<h3>Bài 6: Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".</h3>-->
+<button type="button" onclick="taskSix()">Bai 6</button>
+
+<script>
+    function taskOne() {
+        let a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+        // a[0]=[1, 2, 1, 24];
+        // a[1]=[8, 11, 9, 4];
+        // a[2]=[7, 0, 7, 27];
+        // a[3]=[7, 4, 28, 14];
+        // a[4]=[3, 10, 26, 7];
+        for (let i in a) {
+            document.write("row " + i +'<br>');
+            for (let j in a[i]) {
+                document.write(" " + a[i][j] + '<br>');
+            }
+        }
+    }
+
+    function taskTwo() {
+        let arrayPrint=[2,9,6,8,'a','g','N'];
+        let newArray;
+        newArray=arrayPrint.reverse();
+        document.write('Mang sau khi dao nguoc la: '+ newArray)
+    }
+
+
+    function taskThree() {
+        let kyTuArray=new Array(10);
+        let numberArray=[];
+        let notNumberArray=[];
+        for(let i=0;i<10;i++){
+            let input=prompt('Nhap ky tu ban muon:');
+            kyTuArray[i]=input;
+            if(isNaN(kyTuArray[i])){
+                notNumberArray.push(kyTuArray[i]);
+            }else {
+                numberArray.push(kyTuArray[i]);
+            }
+        }
+        document.write('Do dai cua mang la: '+kyTuArray.length+'<br>'+ 'Mang chua cac ky tu so la: '+ numberArray)
+    }
+
+
+    function taskFour() {
+        
+    }
+</script>
+</body>
+</html>
