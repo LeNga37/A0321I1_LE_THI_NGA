@@ -59,8 +59,43 @@
     }
 
 
-    function taskFour() {
-        
+    // function taskFour() {
+    //     let chuoi=prompt('Nhap chuoi can dem so tu');
+    //     let counter=0;
+    // }
+
+
+
+    function taskFive() {
+        let chuoia=new Array(10);
+        let chuoib=new Array(10);
+        let check;
+        for(let i=1;i<=10;i++){
+            let anum=prompt('Nhap phan tu thu '+i+' cua chuoi a');
+            let bnum=prompt('Nhap phan tu thu '+i+' cua chuoi b');
+            chuoia[i]=anum;
+            chuoib[i]=bnum;
+            if(chuoia[i]===chuoib[i]){
+                check=true;
+            }
+        }
+        if(check){
+            document.write('Chuoi a va chuoi b giong nhau')
+        }else {
+            document.write('Chuoi a va chuoi b khac nhau')
+        }
+    }
+
+    function taskSix() {
+        let kyTuArray=new Array(10);
+        for(let i=0;i<10;i++) {
+            let kytu = prompt('Nhap mang ky tu can tim');
+            kyTuArray[i] = kytu;
+            if (kyTuArray[i] === "-") {
+                kyTuArray[i]='_'
+            }
+        }
+        document.write('Mang ky tu moi sau khi thay the:'+ kyTuArray)
     }
 </script>
 </body>
