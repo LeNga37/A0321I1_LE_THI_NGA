@@ -53,11 +53,12 @@
     }
 
 
-    // function taskFour() {
-    //     let chuoi=prompt('Nhap chuoi can dem so tu');
-    //     let counter=0;
-    // }
-
+    function taskFour() {
+        let chuoi=prompt('Nhap chuoi can dem so tu');
+        let counter;
+        counter=chuoi.split(" ").length;
+        document.write('Do dai cua chuoi la: '+counter)
+    }
 
 
     function taskFive() {
@@ -83,13 +84,23 @@
     function taskSix() {
         let kyTuArray=new Array(10);
         for(let i=0;i<10;i++) {
-            let kytu = prompt('Nhap mang ky tu can tim');
-            kyTuArray[i] = kytu;
+            let kyTu = prompt('Nhap mang ky tu can tim');
+            kyTuArray[i] = kyTu;
             if (kyTuArray[i] === "-") {
                 kyTuArray[i]='_'
             }
         }
         document.write('Mang ky tu moi sau khi thay the:'+ kyTuArray)
+
+
+        //     let kyTu = prompt('Nhap mang ky tu cach nhau bang dau ",": ');
+        //     let newArray= kyTu.split("");
+        //     for(let i=0;i<newArray.length;i++){
+        //     if (newArray[i] === "-") {
+        //         newArray[i]='_'
+        //     }
+        // }
+        // document.write('Mang ky tu moi sau khi thay the: '+ newArray)
     }
 </script>
 </body>
