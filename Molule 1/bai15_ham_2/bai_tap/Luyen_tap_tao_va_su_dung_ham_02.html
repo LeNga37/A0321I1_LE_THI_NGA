@@ -2,9 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Tao_va_su_dung_ham_02</title>
 </head>
 <body>
-$END$
+    <p>
+        Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.<br/>
+
+        Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được. <br/>
+
+        Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.<br/>
+
+        Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false. <br/>
+
+        Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất. <br/>
+
+        Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false. <br/>
+
+        Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó. <br/>
+
+        Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó. <br/>
+
+        Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự. <br/>
+    </p>
+<script>
+    function bai1(num) {
+        square=num*num;
+        document.write('Bai 1: '+ square + '<br/>');
+        return square
+    }
+    bai1(9);
+
+    function bai2(radius) {
+        area=radius*radius*Math.PI;
+        circumference=radius*2*Math.PI;
+        document.write("Bai 2: Dien tich hinh tron: " + area + '<br/>');
+        document.write("Bai 2: Chu vi hinh tron: "+ circumference  + '<br/>');
+    }
+    bai2(3);
+
+    function bai3(num) {
+        let a=1;
+        for(let i=1;i<=num;i++){
+            a=a*i;
+        }
+        document.write('Bai 3: '+ num + '!= '+a +'<br/>');
+    }
+    bai3(4);
+
+    // Bai 4
+
+    let a=prompt('Nhap ky tu can kiem tra cua bai 4: ');
+    function check(kytu) {
+        let result="";
+        if(isNaN(kytu)){
+            result= "false";
+            return result;
+        }else {
+            result= "true";
+            return  result;
+        }
+    }
+    document.write('Bai 4: Ky tu can kiem tra la: '+a+ ". Nen ham tra ve: " + check(a)+'<br/>');
+
+    function checkNumber(a,b,c) {
+        let min=a;
+        if(b<a){
+            min=b;
+        }
+        if(c<b){
+            min=c;
+            return min;
+        }
+        document.write('Bai 5: So nguyen co gia tri nho nhat la: ' + min)
+    }
+    checkNumber(4,5,6)
+
+
+</script>
 </body>
 </html>

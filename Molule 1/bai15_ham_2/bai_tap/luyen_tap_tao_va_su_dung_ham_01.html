@@ -2,9 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <form>
+<!--        <select id="baitap" onchange="do_something()">-->
+<!--            <option>Chon bai</option>-->
+<!--            <option>Bai 1</option>-->
+<!--            <option>Bai 2</option>-->
+<!--            <option>Bai 3</option>-->
+<!--            <option>Bai 4</option>-->
+<!--            <option>Bai 5</option>-->
+<!--        </select>-->
+<!--        <button type="button" onclick="bai()">Start</button>-->
+        <h4>Bài 1: Tạo hàm alertMessage() hiển thị hộp thoại chứa chuỗi  "Xin chao". Gọi hàm từ trong phầncủa trang web.</h4>
+        <h4>Bài 2: Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm. Gọi hàm từ trong phần của trang web và hiển thị kết quả lên màn hình.</h4>
+        <h4>Bài 3: Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng. Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.</h4>
+        <h4>Bài 4: Thêm các hàm alert() vào những vị trí thích hợp trong đoạn mã sau để bạn có thể nhìn thấy giá trị của biến result trước và sau lời gọi hàm. Đoạn mã có dạng như sau:
+
+            function addNumbers() {
+            firstNum = 4;
+            secondNum = 8;
+            result = firstNum + secondNum;
+            return result;
+            }
+            result = 0;
+            result = addNumbers();</h4>
+        <h4>Bài 5: Tạo một mảng với bảy phần tử dạng chuỗi có giá trị là tên các ngôi sao sau: Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe và Regulus. Tạo một mảng khác với bảy phần tử dạng chuỗi có giá trị là tên các chòm sao tương ứng chứa các ngôi sao: Ursa Minor, Tarurus, Cygnus, Lyra, Aquila, Ursa Major và Leo. Tiếp theo, tạo một hàm nhận vào một tham số dạng chuỗi duy nhất. Trong hàm này, duyệt qua mảng thứ nhất để tìm tên ngôi sao. Nếu tìm thấy, trả lại giá trị tương ứng với chỉ số đó ở mảng thứ hai. Nói cách khác, trả lại tên chòm sao của ngôi sao đó. Trong phần <body> của trang web, dùng hộp thoại prompt để người dùng nhập vào tên của ngôi sao, sau đó gọi hàm với thông tin đầu vào. Đừng quên xử lý trong trường hợp không tìm thấy ngôi sao nào. Cho kết quả hiển thị trên màn hình.</h4>
+    </form>
+    <script>
+        // let request;
+        // function do_something() {
+        //     let result=document.getElementById('baitap').value;
+        //     request=result;
+        // }
+        // function bai() {
+        //     if(request=='Bai 1'){
+        //         bai1();
+        //     }else if(request=='Bai 2'){
+        //         bai2();
+        //     }else if(request=='Bai 3'){
+        //         bai3();
+        //     }else if(request=='Bai 4'){
+        //         bai4()
+        //     }else if(request=='Bai 5'){
+        //         bai5()
+        //     }else {
+        //         alert('chon bai tu 1 den 5')
+        //     }
+        // }
+        function bai1() {
+            alert("Xin chao")
+        }
+            bai1();
+
+        function bai2(num) {
+            let newNum=parseFloat(num+1);
+           alert(newNum);
+           return newNum
+        }
+            bai2(8);
+
+        function bai3(a,b) {
+            if(a>b){
+                alert('Tham so thu nhat lon hon tham so thu 2')
+            }else {
+                let sum=a+b;
+                alert('Tổng của 2 số là: '+ sum);
+                return "Sum:" + sum
+            }
+        }
+        bai3(7,4);
+        bai3(4,7);
+
+        
+        function bai4() {
+             firstNum = 4;
+             secondNum = 8;
+             result = firstNum + secondNum;
+             alert('Giá trị của biến result trước khi gọi hàm: ' + result);
+            return result;
+
+        }
+        result = 0;
+        result = bai4();
+        alert('Giá trị của biến result sau khi gọi hàm: ' + result);
+
+        // function bai5() {
+        //
+        //
+        // }
+    </script>
 </body>
 </html>
