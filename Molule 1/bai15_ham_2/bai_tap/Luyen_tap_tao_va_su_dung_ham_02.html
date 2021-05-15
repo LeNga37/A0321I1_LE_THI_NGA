@@ -5,7 +5,6 @@
     <title>Tao_va_su_dung_ham_02</title>
 </head>
 <body>
-    <p>
         <span><b>Bài 1:</b> Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</span><br/>
         <span>Number</span><input id="number1" type="number"/>
         <button type="button" onclick="taskOne()">Check</button><br/><br/>
@@ -30,10 +29,16 @@
         <span>NumberOne: </span><input id="numberOne" type="number"/> <br/>
         <span>NumberTwo: </span><input id="numberTwo" type="number"/> <br/>
         <button type="button" onclick="checkBai7()">Check</button><br/><br/>
-        Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó. <br/>
-
-        Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự. <br/>
-    </p>
+        <span><b>Bài 8:</b> Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.</span> <br/>
+        <span><i>Nhập mảng số nguyên cách nhau bằng dấu cách vào khung:</i> </span> <br/>
+        <input id="arraySoNguyen"/><br/>
+        <button type="button" onclick="checkBai8()">Check</button> <br/> <br/>
+        <span><b>Bài 9:</b> Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự.</span> <br/>
+        <span><i>Nhập mảng ký tự cần kiểm tra (nhập liên tiếp nhau):</i></span>
+        <input id="inputMangKyTu"/> <br/>
+        <span><i>Nhập ký tự cần kiểm tra:</i></span>
+        <input id="inputKyTu"/> <br/>
+        <button type="button"  onclick="checkBai9()">Check</button>
 <script>
     function bai1(num) {
         square=num*num;
@@ -132,7 +137,8 @@
     }
     function checkBai6() {
         let n=parseInt(document.getElementById('input').value);
-        document.write(checkNguyenDuong(n))
+        alert(checkNguyenDuong(n));
+        input.value=""
     }
 
 
@@ -146,8 +152,43 @@
     function checkBai7() {
         let number1=parseInt(document.getElementById('numberOne').value);
         let number2=parseInt(document.getElementById('numberTwo').value);
-        document.write(swap(number1,number2))
+        alert(swap(number1,number2));
+        numberOne.value="";
+        numberTwo.value=""
+    }
 
+    
+
+    function checkBai8() {
+        let string=document.getElementById('arraySoNguyen').value;
+        let array=string.split(" ");
+        array.reverse();
+        alert('Mang so nguyen dao nguoc la: '+ array);
+        arraySoNguyen.value=""
+    }
+
+
+    
+    function checkBai9() {
+        let string=document.getElementById('inputMangKyTu').value;
+        let array=string.split("");
+        let kyTu=document.getElementById('inputKyTu').value;
+        let counter=0;
+        let checker="";
+        for(let i=0;i<array.length;i++){
+            if(kyTu===array[i]){
+                checker=true;
+                counter+=1;
+            }
+        }
+        if(checker){
+            alert('Số lần xuất hiện của ký tự trong mảng là: '+counter);
+        }
+        else {
+            alert('Ký tự không xuất hiện trong mảng')
+        }
+        inputMangKyTu.value="";
+        inputKyTu.value="";
     }
 </script>
 </body>
