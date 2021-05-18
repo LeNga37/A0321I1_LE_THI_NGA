@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay_dung_lop_mo_ta_hinh_chu_nhat</title>
+</head>
+<body>
+<canvas id="myCanvas" width="600" height=300" style="border: 1px solid yellow"></canvas>
+<p id="show"></p>
+<p id="show1"></p>
+<script>
+    class Rectangle{
+        constructor(length,width) {
+            this.length=length;
+            this.width=width;
+        }
+        getLength(){
+            return this.length
+        }
+        getWidth(){
+            return this.width;
+        }
+        getArea(){
+            return this.length*this.width;
+        }
+        getPerimeter(){
+            return (this.length+this.width)*2;
+        }
+        setLength(newLength){
+            this.length=newLength;
+        }
+        setWidth(newWidth){
+            this.width=newWidth;
+        }
+    }
+    let rectangle = new Rectangle(200,100);
+    let length=rectangle.getLength();
+    let width=rectangle.getWidth();
+    let area= rectangle.getArea();
+    let perimeter=rectangle.getPerimeter();
+    document.getElementById('show').innerHTML="Area1: "+ area+ "; Perimeter1: "+perimeter;
+
+    rectangle.setLength(100);
+    rectangle.setWidth(50);
+    let cv=rectangle.getPerimeter();
+    let st=rectangle.getArea();
+    document.getElementById('show1').innerHTML="Area2: "+ st+ "; Perimeter2: "+cv;
+
+    function getRandomHex(){
+        return Math.floor(Math.random()*255);
+    }
+    function getRandomColor(){
+        let red = getRandomHex();
+        let green = getRandomHex();
+        let blue = getRandomHex();
+        return "rgb(" + red + "," + blue + "," + green +")";
+    }
+    function draw() {
+        let c=document.getElementById('myCanvas');
+        let myCanvas=c.getContext("2d");
+        let color=getRandomColor();
+        myCanvas.fillStyle=color;
+        myCanvas.fillRect(50,50,length,width)
+    }
+    draw()
+</script>
+</body>
+</html>
