@@ -32,6 +32,12 @@
         setWidth(newWidth){
             this.width=newWidth;
         }
+        show() {
+            let c=document.getElementById('myCanvas');
+            let myCanvas=c.getContext("2d");
+            myCanvas.fillStyle="red";
+            myCanvas.fillRect(50,50,this.length,this.width)
+        }
     }
     let rectangle = new Rectangle(200,100);
     let length=rectangle.getLength();
@@ -46,23 +52,7 @@
     let st=rectangle.getArea();
     document.getElementById('show1').innerHTML="Area2: "+ st+ "; Perimeter2: "+cv;
 
-    function getRandomHex(){
-        return Math.floor(Math.random()*255);
-    }
-    function getRandomColor(){
-        let red = getRandomHex();
-        let green = getRandomHex();
-        let blue = getRandomHex();
-        return "rgb(" + red + "," + blue + "," + green +")";
-    }
-    function draw() {
-        let c=document.getElementById('myCanvas');
-        let myCanvas=c.getContext("2d");
-        let color=getRandomColor();
-        myCanvas.fillStyle=color;
-        myCanvas.fillRect(50,50,length,width)
-    }
-    draw()
+    rectangle.show()
 </script>
 </body>
 </html>
