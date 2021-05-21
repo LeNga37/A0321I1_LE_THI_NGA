@@ -2,9 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Adam_va_Eva</title>
 </head>
 <body>
-$END$
+    <script>
+        class Apple{
+            constructor(weight) {
+                this.weight=weight;
+            }
+            getWeight(){
+                return this.weight;
+            }
+            deceraseWeight(){
+                if(this.weight>0){
+                    this.weight--
+                }
+            }
+            isEmpty(){
+                if(this.weight===0){
+                    return true
+                }else {
+                    return false
+                }
+            }
+        }
+        class Human{
+            constructor(name,gender,weight) {
+                this.name=name;
+                this.gender=gender;
+                this.weight=weight;
+            }
+            getName(){
+                return this.name;
+            }
+            getGender(){
+                return this.gender;
+            }
+            say(string){
+                alert(string);
+            }
+            eat(Apple){
+                if(Apple.getWeight()>0){
+                    this.weight++;
+                    Apple.deceraseWeight();
+                }else {
+                    alert('Tao da an het')
+                }
+            }
+            getWeight(){
+                return this.weight;
+            }
+            checkApple(){
+                return Apple.getWeight();
+            }
+            isMale(){
+                if(this.gender=='Male'){
+                    return true
+                }else {
+                    return  false
+                }
+            }
+        }
+    </script>
 </body>
 </html>
