@@ -2,9 +2,115 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Yeu_cau_1_ve_hinh</title>
 </head>
 <body>
-$END$
+    <form>
+        <select id="baitap" onchange="do_something()">
+            <option>Chon bai</option>
+            <option>Bai 1</option>
+            <option>Bai 2</option>
+            <option>Bai 3</option>
+            <option>Bai 4</option>
+        </select>
+        <button type="button" onclick="bai()">Start</button>
+        <h4>Bài 1: Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m Bài 1: Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m.</h4>
+        <h4>Bài 2: Vẽ tam giác vuông cân rỗng có chiều cao h.</h4>
+        <h4>Bài 3: Vẽ tam giác cân đặc có chiều cao h. </h4>
+        <h4>Bài 4: Vẽ tam giác cân rỗng có chiều cao h. </h4>
+        <p id="result1"></p>
+    </form>
+<script>
+    let request;
+    function do_something() {
+        let result = document.getElementById("baitap").value;
+        request=result;
+    }
+        function bai() {
+                if(request==="Bai 1"){
+                    bai1()
+                } else if(request==="Bai 2"){
+                    bai2()
+                }else if(request==="Bai 3"){
+                    bai3()
+                } else if(request==="Bai 4") {
+                    bai4()
+                } else {
+                    alert("chon bai")
+                }
+        }
+
+        function bai1() {
+            let n=parseInt(prompt('Nhap chieu dai cua hinh chu nhat'));
+            let m=parseInt(prompt('Nhap chieu rong cua hinh chu nhat'));
+            let result="";
+            for(let i=1;i<=m;i++){
+                for(let j=1;j<=n;j++){
+                    if(i===1||i===m||j===1||j===n){
+                        result+='*'
+                    }else {
+                        result+="&nbsp;&nbsp"
+                    }
+                }
+                result += "<br>"
+            }
+            document.getElementById('result1').innerHTML=result
+        }
+
+    function bai2() {
+        let h = parseInt(prompt('Nhap chieu cao cua tam giac vuong: '));
+        let result = "";
+        for (let i = 1; i <= h; i++) {
+            for (let j = 1; j <= i; j++) {
+                if (j === 1 || i === h || j === i) {
+                    result += '*'
+                } else {
+                    result += "&nbsp;&nbsp"
+                }
+            }
+            result += "<br>"
+        }
+        document.getElementById('result1').innerHTML=result
+    }
+        function bai3() {
+            let h = parseInt(prompt('Nhap chieu cao cua tam giac can: '));
+            let m=h;
+            let n=h;
+            let result = "";
+            for(let i=1;i<=h;i++){
+                for(let j=1;j<=2*h-1;j++){
+                    if(j>=m&&j<=n){
+                        result +='*'
+                    }else {
+                        result +="&nbsp;&nbsp"
+                    }
+                }
+                m--;
+                n++;
+                result += "<br>"
+            }
+            document.getElementById('result1').innerHTML=result
+        }
+
+        function bai4() {
+            let h=parseInt(prompt('Nhap chieu cao cua tam giac can: '));
+            let m=h;
+            let n=h;
+            let result="";
+            for(let i=1;i<=h;i++){
+                for(let j=1;j<=2*h-1;j++){
+                    if(j===m||j===n||i===h){
+                        result+='*'
+                    }else {
+                        result +='&nbsp;&nbsp'
+                    }
+                }
+                m--;
+                n++;
+                result+="<br/>"
+            }
+            document.getElementById('result1').innerHTML=result
+        }
+</script>
 </body>
 </html>

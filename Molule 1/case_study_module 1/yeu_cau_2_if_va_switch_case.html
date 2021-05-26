@@ -2,9 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Yeu_cau_2_if_va_switch_case</title>
 </head>
 <body>
-$END$
+    <select id="baitap" onchange="do_something()">
+        <option>Chon bai</option>
+        <option>Bai 1</option>
+        <option>Bai 2</option>
+    </select>
+    <button type="button" onclick="bai()">Start</button>
+    <h4>Bài 1: Viết một chương trình để nhập lương nhân viên, tính thuế thu nhập và lương ròng (số tiền lương thực sự mà nhân viên đó nhận được).</h4>
+    <h4>Bài 2: Viết chương trình kiểm tra một ký tự trong bảng chữ cái tiếng anh là nguyên âm hay phụ âm. Ký tự là bất kỳ được nhập từ bàn phím. Các ký tự nguyên âm bao gồm: 'o', 'u', 'i', 'a', 'e' hoặc 'O', 'U', 'I', 'A', 'E'</h4>
+    <p id="result"/>
+    <script>
+        let request;
+        function do_something() {
+            let result=document.getElementById("baitap").value;
+            request=result;
+        }
+        function bai() {
+            if(request==="Bai 1"){
+                bai1();
+            }if(request==="Bai 2"){
+                bai2();
+            }
+        }
+
+    function bai1() {
+        let tax;
+        let salary=parseFloat(prompt('Nhap tien luong nhan vien'));
+        if(salary<=0){
+            alert('Hay nhap dung so tien luong cua ban')
+        } else if(salary<7000000){
+            tax=salary*0.05;
+            document.getElementById('result').innerHTML='Số tiền thuế của bạn là: '+tax+"<br/>"+'Tiền lương sau khi trừ thuế của bạn là: '+ (salary-tax);
+        }else if(salary>=7000000&&salary<15000000){
+            tax=salary*0.1;
+            document.getElementById('result').innerHTML='Số tiền thuế của bạn là: '+tax+"<br/>"+'Tiền lương sau khi trừ thuế của bạn là: '+ (salary-tax);
+        }else {
+            tax=salary*0.2;
+            document.getElementById('result').innerHTML='Số tiền thuế của bạn là: '+tax+"<br/>"+'Tiền lương sau khi trừ thuế của bạn là: '+ (salary-tax);
+        }
+    }
+
+    function bai2() {
+        let kytu=prompt('Nhập ký tự trong bảng chữ cái tiếng Anh cần kiểm tra:');
+        switch (kytu){
+            case'o':
+            case'u':
+            case'i':
+            case'a':
+            case'e':
+            case'O':
+            case'U':
+            case'I':
+            case'A':
+            case'E':
+                document.getElementById('result').innerHTML="Ký tự " + kytu  +" bạn nhập là nguyên âm";
+                break;
+            default:
+                document.getElementById('result').innerHTML="Ký tự " + kytu  +" bạn nhập là phụ âm";
+        }
+    }
+    </script>
 </body>
 </html>

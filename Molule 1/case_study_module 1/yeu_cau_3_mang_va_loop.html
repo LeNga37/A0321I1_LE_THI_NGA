@@ -2,9 +2,171 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Array_and_Loop</title>
 </head>
 <body>
-$END$
+<i>Chú ý:</i><br/>
+<i>Bước 1: Hãy chọn bài cần làm. </i><br/>
+<i>Bước 2: Nếu bài làm cần phải nhập dữ liệu vào khung thì hãy nhập dữ liệu vào khung trước khi ấn start. </i><br/><br/>
+<select id="baitap" onchange="do_something()">
+    <option>Chọn bài</option>
+    <option>Bai 1</option>
+    <option>Bai 2</option>
+    <option>Bai 3</option>
+    <option>Bai 4</option>
+</select>
+<button type="button" onclick="bai()">Start</button>
+<h4>Bài 1: Cho mảng a chỉ chứa các số nguyên. Xây dựng mảng b là prefix sums của mảng a. </h4>
+<span>Nhập số nguyên mảng a (nhập các số nguyên cách nhau bằng dấu cách):</span>
+<input id="soNguyen"/>
+<p id="result1"></p>
+<h4>Bài 2: Cho 2 mảng A và B chứa số nguyên. Tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A</h4>
+<span>Nhập các phần tử số nguyên cho mảng A (mỗi số nguyên cách nhau một dấu cách):</span>
+<input id="mangA"/> <br/><br/>
+<span>Nhập các phần tử số nguyên cho mảng B (mỗi số nguyên cách nhau một dấu cách):</span>
+<input id="mangB"/>
+<p id="result2"></p>
+<h4>Bài 3: Cho một danh sách các phân số, hãy tìm chỉ số của phân số lớn nhất (đếm từ 0). Giả định rằng không có các phân số bằng nhau trong tập đầu vào</h4>
+<i>Chú ý: Nhập số lượng cho tử số và mẫu số bằng nhau, các số nguyên của mẫu số phải khác 0. </i> <br/><br/>
+<span>Nhập tử số  (mỗi số cách nhau một dấu cách):</span>
+<input id="tuSo"/> <br/><br/>
+<span>Nhập mẫu số (mỗi số cách nhau một dấu cách):</span>
+<input id="mauSo"/>
+<p id="result3"></p>
+<h4>Bài 4: Viết một chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ. Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn.</h4>
+<span>Nhập số cần in vào khung: </span>
+<input id="number"/>
+<p id="result4"></p>
+
+<script>
+    let request;
+    function do_something(){
+        let result=document.getElementById('baitap').value;
+        request=result;
+    }
+    function bai() {
+        switch (request) {
+            case 'Bai 1':
+                bai1();
+                break;
+            case 'Bai 2':
+                bai2();
+                break;
+            case 'Bai 3':
+                bai3();
+                break;
+            case 'Bai 4':
+                bai4();
+                break;
+        }
+    }
+
+    function bai1() {
+        let arrayB= new Array();
+        let sum=0;
+        // let soNguyen=prompt('Hãy nhập các phần tử của mảng A là các số nguyên cách nhau bằng dấu cách');
+        let soNguyen=document.getElementById('soNguyen').value;
+        let arrayA =soNguyen.split(" ");
+        for(let i=0;i<arrayA.length;i++){
+            let x=parseInt(arrayA[i]);
+            sum+=x;
+            arrayB.push(sum);
+        }
+        document.getElementById('result1').innerHTML="Mảng B được tạo ra là: arrayB = ["+arrayB + '] ';
+    }
+    function bai2() {
+        // let mangA=prompt('Nhập các phần tử trong mảng A');
+        let mangA = document.getElementById('mangA').value;
+        let arrayA = mangA.split(" ");
+        // let mangB=prompt('Nhập các phần tử trong mảng A');
+        let mangB = document.getElementById('mangB').value;
+        let arrayB = mangB.split(" ");
+        let arrayC = new Array();
+        let checker = true;
+        for (let i = 0; i < arrayB.length; i++) {
+            arrayB[i] = parseInt(arrayB[i]);
+            for (let j = 0; j < arrayA.length; j++) {
+                arrayA[j] = parseInt(arrayA[j]);
+                if (arrayB[i] !== arrayA[j]) {
+                    checker=true
+                } else {
+                    checker=false;
+                    break;
+                }
+            }
+            if(checker){
+                arrayC.push(arrayB[i]);
+            }
+        }
+        document.getElementById('result2').innerHTML = 'Mảng mới đã được sắp xếp là: arrayC= [' + arrayC + ']';
+    }
+
+    function bai3() {
+        let numerators = document.getElementById('tuSo').value;
+        let arrayNumerators = numerators.split(" ");
+        let denominators = document.getElementById('mauSo').value;
+        let arrayDenominators = denominators.split(" ");
+        let newArray = new Array();
+        let n;
+        for(let i=0;i<arrayNumerators.length;i++){
+            let x=parseInt(arrayNumerators[i]);
+            let y=parseInt(arrayDenominators[i]);
+            n=x/y;
+            newArray.push(n)
+        }
+        let max=newArray[0];
+        let index =0;
+        for(let j=1;j<newArray.length;j++){
+            if(newArray[j]>max){
+                max=newArray[j];
+                index=j;
+            }
+        }
+        document.getElementById('result3').innerHTML='Index: '+index;
+    }
+
+    function bai4() {
+        let number=document.getElementById('number').value;
+        let array=number.split("");
+        for(let i=0;i<array.length;i++){
+            let x=parseInt(array[i]);
+            switch (x) {
+                case 0:
+                    result4.innerHTML=result4.innerHTML+'không ';
+                    break;
+                case 1:
+                    result4.innerHTML=result4.innerHTML+'một ';
+                    break;
+                case 2:
+                    result4.innerHTML=result4.innerHTML+'hai ';
+                    break;
+                case 3:
+                    result4.innerHTML=result4.innerHTML+'ba ';
+                    break;
+                case 4:
+                    result4.innerHTML=result4.innerHTML+'bốn ';
+                    break;
+                case 5:
+                    result4.innerHTML=result4.innerHTML+'năm ';
+                    break;
+                case 6:
+                    result4.innerHTML=result4.innerHTML+'sáu ';
+                    break;
+                case 7:
+                    result4.innerHTML=result4.innerHTML+'bảy ';
+                    break;
+                case 8:
+                    result4.innerHTML=result4.innerHTML+'tám ';
+                    break;
+                case 9:
+                    result4.innerHTML=result4.innerHTML+'chín';
+                    break;
+                default:
+                document.getElementById('result4').innerHTML='hãy nhập số';
+            }
+        }
+    }
+
+</script>
 </body>
 </html>
