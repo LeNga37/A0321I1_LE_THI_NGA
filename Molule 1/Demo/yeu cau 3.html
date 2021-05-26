@@ -2,9 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Yeu_cau_3_mang_va_loop</title>
 </head>
 <body>
-$END$
+    <i>Chú ý:</i><br/>
+    <i>Bước 1: Hãy chọn bài cần làm. </i><br/>
+    <i>Bước 2: Nếu bài làm cần phải nhập dữ liệu vào khung thì hãy nhập dữ liệu vào khung trước khi ấn start. </i><br/><br/>
+    <select id="baitap" onchange="do_something()">
+        <option>Chọn bài</option>
+        <option>Bai 1</option>
+        <option>Bai 2</option>
+        <option>Bai 3</option>
+        <option>Bai 4</option>
+        <option>Bai 5</option>
+    </select>
+    <button type="button" onclick="bai()">Start</button>
+    <h4>Bài 1: Cho mảng a chỉ chứa các số nguyên. Xây dựng mảng b là prefix sums của mảng a. </h4>
+    <p id="result1"></p>
+    <h4>Bài 2: Cho 2 mảng A và B chứa số nguyên. Tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A</h4>
+    <span>Nhập các phần tử số nguyên cho mảng A (mỗi số nguyên cách nhau một dấu cách):</span>
+    <input id="mangA"/> <br/><br/>
+    <span>Nhập các phần tử số nguyên cho mảng B (mỗi số nguyên cách nhau một dấu cách):</span>
+    <input id="mangB"/>
+    <p id="result2"></p>
+    <h4>Bài 3</h4>
+    <h4>Bài 4</h4>
+    <h4>Bài 5</h4>
+    <script>
+        let request;
+        function do_something(){
+            let result=document.getElementById('baitap').value;
+            request=result;
+        }
+        function bai() {
+            switch (request) {
+                case 'Bai 1':
+                    bai1();
+                    break;
+                case 'Bai 2':
+                    bai2();
+                    break;
+                case 'Bai 3':
+                    bai3();
+                    break;
+                case 'Bai 4':
+                    bai4();
+                    break;
+                case 'Bai 5':
+                    bai5();
+                    break;
+            }
+        }
+
+        function bai1() {
+            let arrayB= new Array();
+            let sum=0;
+            let phanTu=prompt('Hãy nhập các phần tử của mảng A là các số nguyên cách nhau bằng dấu cách');
+            let arrayA =phanTu.split(" ");
+            for(let i=0;i<arrayA.length;i++){
+                let x=new Number(arrayA[i]);
+                sum+=x;
+                arrayB.push(sum);
+            }
+            document.getElementById('result1').innerHTML="Mảng B được tạo ra là: arrayB = ["+arrayB + '] ';
+        }
+    function bai2() {
+        let mangA=document.getElementById('mangA').value;
+        let arrayA=mangA.split(" ");
+        let mangB=document.getElementById('mangB').value;
+        let arrayB=mangB.split(" ");
+        let arrayC=[];
+        let checker;
+        for(let i=0;i<arrayB.length;i++){
+            for(let j=0;j<arrayA.length;j++){
+                if(arrayB[i]!==arrayA[j]){
+                    checker=true;
+                }else {
+                    checker=false;
+                }
+            }
+            if(checker){
+                arrayC.push(arrayB[i]);
+            }
+        }
+        document.getElementById('result2').innerHTML='Mảng mới đã được sắp xếp là: arrayC= ['+arrayC+']';
+    }
+    </script>
 </body>
 </html>

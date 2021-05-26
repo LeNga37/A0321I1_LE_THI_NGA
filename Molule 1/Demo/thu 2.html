@@ -2,9 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let so = prompt('nhập số:');
+    let arr = so.split('');
+    for (let i = 0; i < arr.length; i++) {
+        switch (parseInt(arr[i])) {
+            case 0:
+                document.write('không ');
+                break;
+            case 1:
+                document.write('một ');
+                break;
+            case 2:
+                document.write('hai ');
+                break;
+            case 3:
+                document.write('ba ');
+                break;
+            case 4:
+                document.write('bốn ');
+                break;
+            case 5:
+                document.write('năm ');
+                break;
+            case 6:
+                document.write('sáu ');
+                break;
+            case 7:
+                document.write('bảy ');
+                break;
+            case 8:
+                document.write('tám ');
+                break;
+            case 9:
+                document.write('chín ');
+                break;
+            default:
+                document.write('So da nhap khong hop le!');
+        }
+    }
+</script>
+<!--<script>-->
+<!--    class SwitchButton {-->
+<!--        constructor(status){-->
+<!--            this.status = status;-->
+<!--        };-->
+<!--        setStatus = function (newStatus) {-->
+<!--            this.status = newStatus;-->
+<!--        } ;-->
+<!--        getStatus = function () {-->
+<!--            return this.status;-->
+<!--        };-->
+<!--        turnOnOff = function () {-->
+<!--            this.status = !this.status;-->
+<!--        }-->
+<!--    };-->
+<!--    class Lamp {-->
+<!--        constructor(switchButton) {-->
+<!--        }-->
+<!--        onLight = function () {-->
+<!--            if (switchButton1.getStatus() === true) {-->
+<!--                document.getElementById("lamp").src = "https://www.w3schools.com/html/pic_bulbon.gif";-->
+<!--                document.getElementById("result").innerHTML = "Bóng đèn đang bật";-->
+
+<!--            }else {-->
+<!--                document.getElementById("lamp").src = "https://www.w3schools.com/html/pic_bulboff.gif";-->
+<!--                document.getElementById("result").innerHTML = "Bóng đèn đang tắt";-->
+<!--            }-->
+
+<!--        }-->
+
+<!--    };-->
+
+<!--    let switchButton1 = new SwitchButton(false);-->
+<!--    let lamp = new Lamp(switchButton1);-->
+<!--    function turnOn_turnOff_lamp(){-->
+<!--        switchButton1.turnOnOff();-->
+<!--        lamp.onLight();-->
+<!--    };-->
+<!--</script>-->
 </body>
 </html>
