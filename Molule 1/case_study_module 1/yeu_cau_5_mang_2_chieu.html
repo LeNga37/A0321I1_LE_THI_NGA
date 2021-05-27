@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mang_2_chieu</title>
+</head>
+<body>
+<form>
+<select id="chonbai"onchange="do_something()">
+    <option>Chọn bài</option>
+    <option>Bài 1</option>
+    <option>Bài 2</option>
+    <option>Bài 3</option>
+</select>
+<button type="button" onclick="bai()">Start</button>
+<h4>Bài 1: Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.</h4>
+<p id="result1"></p>
+<h4>Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó. </h4>
+<p id="result2"></p>
+<h4>Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều </h4>
+<p id="result3"></p>
+</form>
+<script>
+    let result;
+    function do_something() {
+        result=document.getElementById('chonbai').value;
+    }
+    function bai() {
+        switch(result){
+            case 'Bài 1':
+                bai1();
+                break;
+            case 'Bài 2':
+                bai2();
+                break;
+            case 'Bài 3':
+                bai3();
+                break;
+            default:
+                alert("Hãy chọn lại bài")
+        }
+    }
+
+    function bai1(){
+        // let arr=[
+        //     [5,2,3,1],
+        //     [1,8,32,28],
+        //     [9,2,7,24],
+        //     [29,2,12,24],
+        //     [50,4,16,14]
+        // ];
+        let col = parseInt(prompt("Nhâp số cột của ma trận: "));
+        let row = parseInt(prompt("Nhâp số hàng của ma trận: "));
+        let sum=0;
+        let arr = new Array(row);
+        for(let i = 0; i < row; i++){
+            arr[i] = new Array(col);
+            for(let j = 0; j< col; j++){
+                let value = prompt("a["+i+","+j+"] = ");
+                arr[i][j] = value;
+
+            }
+        }
+        for(let i=0;i<arr.length;i++){
+            for(let j=0;j<arr[i].length;j++){
+                if(arr[i][j]%2===0){
+                    sum=sum+parseInt(arr[i][j]);
+                }
+            }
+        }
+        document.getElementById('result1').innerHTML="Tổng các số chẵn trong ma trận là: "+sum;
+    }
+
+    // function bai2() {
+    //     let checker=true;
+    //     let newArr=new Array();
+    //     let arr=[
+    //         [5,2,3,1],
+    //         [1,8,32,28],
+    //         [9,2,7,24],
+    //         [29,2,12,24],
+    //         [50,4,16,14]
+    //     ];
+    //     for(var i=0;i<arr.length;i++){
+    //         for(var j=0;j<arr[i].length;j++){
+    //            if(arr[i][j]<2){
+    //                // console.log()
+    //                arr.splice([i][j],1);
+    //                // checker=false
+    //            }else {
+    //                for(let x=2;x<arr[i][j]-1;x++){
+    //                    if(arr[i][j]%x===0){
+    //                        arr.splice([i][j],1);
+    //                        // checker=false;
+    //                        // console.log(arr[i][j])
+    //                        break;
+    //                    }
+    //                }
+    //
+    //            }
+    //
+    //         }
+    //         // console.log(arr)
+    //         // if(checker){
+    //         //     console.log(arr[i][j])
+    //         //     // newArr.push(arr[i][j]);
+    //         //     // document.write(newArr)
+    //         // }
+    //     }
+    //
+    // }
+</script>
+</body>
+</html>
