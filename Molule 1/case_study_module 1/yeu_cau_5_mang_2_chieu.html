@@ -71,44 +71,81 @@
         document.getElementById('result1').innerHTML="Tổng các số chẵn trong ma trận là: "+sum;
     }
 
-    // function bai2() {
-    //     let checker=true;
-    //     let newArr=new Array();
-    //     let arr=[
-    //         [5,2,3,1],
-    //         [1,8,32,28],
-    //         [9,2,7,24],
-    //         [29,2,12,24],
-    //         [50,4,16,14]
-    //     ];
-    //     for(var i=0;i<arr.length;i++){
-    //         for(var j=0;j<arr[i].length;j++){
-    //            if(arr[i][j]<2){
-    //                // console.log()
-    //                arr.splice([i][j],1);
-    //                // checker=false
-    //            }else {
-    //                for(let x=2;x<arr[i][j]-1;x++){
-    //                    if(arr[i][j]%x===0){
-    //                        arr.splice([i][j],1);
-    //                        // checker=false;
-    //                        // console.log(arr[i][j])
-    //                        break;
-    //                    }
-    //                }
-    //
-    //            }
-    //
-    //         }
-    //         // console.log(arr)
-    //         // if(checker){
-    //         //     console.log(arr[i][j])
-    //         //     // newArr.push(arr[i][j]);
-    //         //     // document.write(newArr)
-    //         // }
-    //     }
-    //
-    // }
+    function bai2() {
+        // let arr=[
+        //     [5,2,3,1],
+        //     [1,8,32,28],
+        //     [9,2,7,24],
+        //     [29,2,12,24],
+        //     [50,41,16,14]
+        // ];
+        let col = parseInt(prompt("Nhâp số cột của ma trận: "));
+        let row = parseInt(prompt("Nhâp số hàng của ma trận: "));
+        let arr = new Array(row);
+        for(let i = 0; i < row; i++){
+            arr[i] = new Array(col);
+            for(let j = 0; j< col; j++){
+                let value = prompt("a["+i+","+j+"] = ");
+                arr[i][j] = value;
+            }
+        }
+        let newArr=[];
+        for(let i=0;i<arr.length;i++){
+            for(let j=0;j<arr[i].length;j++){
+                let checker=true;
+                let n=parseInt(arr[i][j]);
+                if(n<2){
+                    checker=false
+                }
+                else {
+                    for(let x=2;x<n-1;x++){
+                        if(n%x===0){
+                            checker=false;
+                            break;
+                        }
+                    }
+                }
+                if(checker){
+                    newArr.push(n);
+                }
+            }
+        }
+        document.getElementById('result2').innerHTML="Các số nguyên tố trong mảng là: "+newArr+'<br>'+"Số nguyên tố có trong mảng là: "+newArr.length;
+    }
+
+    function bai3() {
+        // let arr=[
+        //     [5,2,3,1],
+        //     [1,8,32,28],
+        //     [9,2,7,24],
+        //     [29,2,12,24],
+        //     [50,4,16,14]
+        // ];
+        let col = parseInt(prompt("Nhâp số cột của ma trận: "));
+        let row = parseInt(prompt("Nhâp số hàng của ma trận: "));
+        let arr = new Array(row);
+        for(let i = 0; i < row; i++){
+            arr[i] = new Array(col);
+            for(let j = 0; j< col; j++){
+                let value = prompt("a["+i+","+j+"] = ");
+                arr[i][j] = value;
+            }
+        }
+        let max=arr[0][0];
+        let min=arr[0][0];
+        for(let i=0;i<arr.length;i++){
+            for(let j=0;j<arr[i].length;j++){
+                if(arr[i][j]>max){
+                    max=arr[i][j];
+                }
+                if(arr[i][j]<min){
+                    min=arr[i][j];
+                }
+            }
+
+        }
+        document.getElementById('result3').innerHTML="Giá trị lớn nhất trong mảng là: "+ max+"<br>"+"Giá trị nhỏ nhất trong mảng là: "+min
+    }
 </script>
 </body>
 </html>
