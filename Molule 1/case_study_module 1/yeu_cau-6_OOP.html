@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOP</title>
+</head>
+<body>
+<div>
+    <button type="button" onclick="muaVe()"  style="margin-bottom: 10px">Mua vé</button>
+    <button onclick="checkKetQua()">Xem kết quả</button>
+    <div id="result"></div>
+</div>
+<script>
+    class Lottery{
+        constructor(number1,number2,number3,number4,number5,number6) {
+            this.number1=number1;
+            this.number2=number2;
+            this.number3=number3;
+            this.number4=number4;
+            this.number5=number5;
+            this.number6=number6;
+        }
+        getNumber1(){
+            return this.number1;
+        }
+        setNumber1(num1){
+            this.number1 =num1;
+        }
+        getNumber2(){
+            return this.number2;
+        }
+        setNumber2(num2){
+            this.number2=num2;
+        }
+        getNumber3(){
+            return this.number3;
+        }
+        setNumber3(num3){
+            this.number3=num3;
+        }
+        getNumber4(){
+            return this.number4;
+        }
+        setNumber4(num4){
+            this.number4=num4;
+        }
+        getNumber5(){
+            return this.number5;
+        }
+        setNumber5(num5){
+            this.number5=num5;
+        }
+        getNumber6(){
+            return this.number6;
+        }
+        setNumber6(num6){
+            this.number6=num6;
+        }
+    }
+    let lottery=new Lottery();
+    let win=[12,23,34,45,56,67];
+    // let arr=[];
+    let count=0;
+    function muaVe(){
+        // for(let i=1;i<=6;i++){
+        //     let n=parseInt(prompt("Nhap so thu "+i+" cua ve so"));
+        //     arr.push(n)
+        // }
+        // document.getElementById("result").innerHTML=arr.join("");
+        document.getElementById("result").innerHTML=
+            '<input type="text" id="number1" style="width: 30px">'+
+            '<input type="text" id="number2" style="width: 30px">'+
+            '<input type="text" id="number3" style="width: 30px">'+
+            '<input type="text" id="number4" style="width: 30px">'+
+            '<input type="text" id="number5" style="width: 30px">'+
+            '<input type="text" id="number6" style="width: 30px">';
+        count++;
+        if(count>4){
+            alert("Ban da mua 4 lan")
+        }
+    }
+    function checkKetQua() {
+        let num1=parseInt(document.getElementById("number1").value);
+        let num2=parseInt(document.getElementById("number2").value);
+        let num3=parseInt(document.getElementById("number3").value);
+        let num4=parseInt(document.getElementById("number4").value);
+        let num5=parseInt(document.getElementById("number5").value);
+        let num6=parseInt(document.getElementById("number6").value);
+        lottery.setNumber1(num1);
+        lottery.setNumber2(num2);
+        lottery.setNumber3(num3);
+        lottery.setNumber4(num4);
+        lottery.setNumber5(num5);
+        lottery.setNumber6(num6);
+        if(lottery.getNumber1()===win[0]&&lottery.getNumber2()===win[1]&&lottery.getNumber3()===win[2]&&lottery.getNumber4()===win[3]&&lottery.getNumber5()===win[4]&&lottery.getNumber6()===win[5]){
+            alert("Chuc mung ban da trung giai nhat")
+        }
+        else if(lottery.getNumber1()!==win[0]&&lottery.getNumber2()===win[1]&&lottery.getNumber3()===win[2]&&lottery.getNumber4()===win[3]&&lottery.getNumber5()===win[4]&&lottery.getNumber6()===win[5]){
+            alert("Chuc mung ban da trung giai nhi")
+        }
+        else if(lottery.getNumber1()!==win[0]&&lottery.getNumber2()!==win[1]&&lottery.getNumber3()===win[2]&&lottery.getNumber4()===win[3]&&lottery.getNumber5()===win[4]&&lottery.getNumber6()===win[5]){
+            alert("Chuc mung ban da trung giai nhi")
+        }
+        else {
+            alert("Chuc ban may man lan sau")
+        }
+    }
+</script>
+</body>
+</html>
