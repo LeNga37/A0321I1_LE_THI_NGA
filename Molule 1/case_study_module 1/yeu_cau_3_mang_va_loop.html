@@ -60,13 +60,12 @@
                 break;
         }
     }
-
     function bai1() {
         let arrayB= new Array();
         let sum=0;
         // let soNguyen=prompt('Hãy nhập các phần tử của mảng A là các số nguyên cách nhau bằng dấu cách');
-        let soNguyen=document.getElementById('soNguyen').value;
-        let arrayA =soNguyen.split(" ");
+        let integer=document.getElementById('soNguyen').value;
+        let arrayA =integer.split(" ");
         for(let i=0;i<arrayA.length;i++){
             let x=parseInt(arrayA[i]);
             sum+=x;
@@ -76,11 +75,11 @@
     }
     function bai2() {
         // let mangA=prompt('Nhập các phần tử trong mảng A');
-        let mangA = document.getElementById('mangA').value;
-        let arrayA = mangA.split(" ");
+        let strA = document.getElementById('mangA').value;
+        let arrayA = strA.split(" ");
         // let mangB=prompt('Nhập các phần tử trong mảng A');
-        let mangB = document.getElementById('mangB').value;
-        let arrayB = mangB.split(" ");
+        let strB = document.getElementById('mangB').value;
+        let arrayB = strB.split(" ");
         let arrayC = new Array();
         let checker = true;
         for (let i = 0; i < arrayB.length; i++) {
@@ -166,7 +165,6 @@
             }
         }
     }
-
 </script>
 </body>
 </html>

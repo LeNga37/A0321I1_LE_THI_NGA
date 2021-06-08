@@ -31,7 +31,7 @@
 
 <script>
     let result=document.getElementById('result');
-    let amount;
+    let soluong;
     function choice(choice) {
         result.value=choice;
         switch (result.value) {
@@ -62,15 +62,15 @@
     }
 
     function tinhtien() {
-        amount=document.getElementById('soluong').value;
-        tienphaitra.value=tienphaitra.value+money.value*amount;
+        soluong=document.getElementById('soluong').value;
+        tienphaitra.value=tienphaitra.value+money.value*soluong;
     }
     function tieptuc() {
         tienphaitra.value= tienphaitra.value+"+"
     }
     function tong(){
-        let newMoney=tienphaitra.value;
-        document.getElementById('sum').innerHTML=eval(newMoney)
+        let thanhToan=tienphaitra.value;
+        document.getElementById('sum').innerHTML=eval(thanhToan)
     }
     // let newMoney=tienphaitra.value
     // document.getElementById('sum').innerHTML=eval(newMoney)

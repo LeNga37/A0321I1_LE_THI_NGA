@@ -45,7 +45,7 @@
             let arr=newStr.split(" ");
             let newArr=[];
             let max;
-            let tuDaiNhat;
+            let longest;
             for(let i=0;i<arr.length;i++){
                 if(arr[i].length===0){//arr[i]===""
                     continue;
@@ -58,7 +58,7 @@
                 max=newArr[0].length;
                 if(newArr[j].length>max){
                     max=newArr[j].length;
-                    tuDaiNhat=newArr[j];
+                    longest=newArr[j];
                 }
             }
             document.getElementById('result1').innerHTML="Xâu trước khi chuẩn hóa: "+str+ '<br/>'+ 'Xâu sau khi chuẩn hóa: '+newArr.join(" ")+'<br>'+'Từ dài nhất là: '+tuDaiNhat;
