@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Danh sach hoc sinh</h4>
+<input type="text" placeholder="Nhap ten" id="ten">
+<input type="text" placeholder="Nhap diem" id="diem">
+<button type="button" onclick="them()">Them</button>
+<p id="show"></p>
+<script>
+    class Hocsinh{
+        constructor(ten,diem) {
+            this.ten=ten;
+            this.diem=diem;
+        }
+        setTen(ten){
+            this.ten=ten;
+        }
+        getTen(){
+            return this.ten;
+        }
+        setDiem(diem){
+            this.diem=diem;
+        }
+        getDiem(){
+            return this.diem
+        }
+    }
+    let danhsachHocSinh=[];
+    hienthi(danhsachHocSinh);
+    function hienthi(danhsach) {
+        let tableString='<table border="1">\n'+
+                '<tr>\n'+
+                '<th>STT</th>'+
+                '<th>Ten hoc sinh</th>'+
+                '<th>Diem</th>'+
+                '<th>Chinh sua</th>'+
+                '<th>Xoa</th>'+
+                '</tr>';
+        for(let i=0;i<danhsach.length;i++){
+            tableString+='<tr>\n'+
+                '<td>'+(i+1)+'</td>\n'+
+                '<td>'+danhsach[i].getTen()+'</td>\n'+
+                '<td>'+danhsach[i].getDiem()+'</td>\n'+
+                '<td><input type="button" onclick="chinhSua('+i+')"value="Sua"></td>\n'+
+                '<td><input type="button" onclick="xoa('+i+')"value="Xoa"></td>\n'+
+                '</tr>'
+        }
+        tableString+='</table>';
+        document.getElementById("show").innerHTML=tableString;
+    }
+    function them() {
+        let ten=document.getElementById('ten').value;
+        let diem=document.getElementById('diem').value;
+        let hocsinh=new Hocsinh(ten,diem);
+        danhsachHocSinh.push(hocsinh);
+        document.getElementById('ten').value='';
+        document.getElementById('diem').value='';
+        hienthi(danhsachHocSinh);
+    }
+    function chinhSua(index) {
+        let tenMoi=prompt("Nhap ten moi");
+        let diemMoi=prompt("Nhap diem moi");
+        danhsachHocSinh[index].setTen(tenMoi);
+        danhsachHocSinh[index].setDiem(diemMoi);
+        hienthi(danhsachHocSinh);
+    }
+    function xoa(index) {
+        let xacnhan=confirm("Ban co muon xoa hoc sinh"+danhsachHocSinh[index].getTen());
+        if(xacnhan){
+            danhsachHocSinh.splice(index, 1);
+        }else {
+            alert("Ban khong muon xoa hoc sinh "+danhsachHocSinh[index].getTen())
+        }
+        hienthi(danhsachHocSinh);
+    }
+</script>
+</body>
+</html>

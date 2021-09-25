@@ -5,78 +5,106 @@
     <title>Array_and_Loop</title>
 </head>
 <body>
-<h4>Bài 5: Gọi đồ uống</h4>
-<i><b>Cách làm:</b></i><br/>
-<i><b>Bước 1:</b> Chọn đồ uống bằng cách nhấn vào nút tên đồ uống.</i><br/>
-<i><b>Bước 2:</b> Chọn số lượng.</i><br/>
-<i><b>Bước 3:</b> Ấn nút "Giá tiền đồ uống đã gọi". Sau khi ấn nếu bạn muốn gọi thêm đồ uống thì ấn nút "Tiếp tục". Muốn kết thúc quá trình gọi món thì ấn nút "Tính tiền".</i><br/><br/>
-<button type="button" onclick="choice('Cafe')">1: Cafe</button>
-<button type="button" onclick="choice('Orange juice')">2: Orange juice</button>
-<button type="button" onclick="choice('Carrot juice')">3: Carrot juice</button>
-<button type="button" onclick="choice('Tomato juice')">4: Tomato juice</button>
-<button type="button" onclick="choice('Water')">5: Water</button>
-<button type="button" onclick="choice('Coconut juice')">6: Coconut juice</button><br/><br/>
-<!--<button type="button" onclick="choice('Break')">7: Break</button><br/><br/>-->
-<span>Đồ uống bạn đã chọn: </span>
-<input type="text" id="result"/><br/><br/>
-<span>Giá tiền của 1 đơn vị đồ uống đã chọn là: </span>
-<input type="text" id="money"/><br/><br/>
-<span>Chọn số lượng:</span><input type="number" id="soluong"/><br/><br/>
-<button type="button" onclick="tinhtien()">Giá tiền tương ứng với số lượng đã chọn</button>
-<button type="button" onclick="tieptuc()" style="margin-left: 29px">Tiếp tục</button>
-<button type="button" onclick="tong()" style="margin-left: 29px">Tính tiền</button><br/><br/>
-<span>Tổng số tiền bạn phải trả là: </span>
-<input type="text" id="tienphaitra"/> <span id="sum"></span>
-<!--<p id="sum"></p>-->
-
+<div>
+    <button type="button" onclick="muaVe()"  style="margin-bottom: 10px">Mua ve</button>
+    <button onclick="checkKetQua()">Xem ket qua</button>
+    <div id="result"></div>
+</div>
 <script>
-    let result=document.getElementById('result');
-    let amount;
-    function choice(choice) {
-        result.value=choice;
-        switch (result.value) {
-            case 'Cafe':
-                money.value=25000;
-                // money.innerHTML=25000; Nếu để thế này thì không hiển thị
-                break;
-            case 'Orange juice':
-                money.value=40000;
-                break;
-            case 'Carrot juice':
-                money.value=30000;
-                break;
-            case 'Tomato juice':
-                money.value=30000;
-                break;
-            case 'Water':
-                money.value=10000;
-                break;
-            case 'Coconut juice':
-                money.value=35000;
-                break;
-            // case 'Break':
-            //     let newMoney=tienphaitra.value;
-            //     document.getElementById('sum').innerHTML=eval(newMoney);
-            //     break;
+    class Lottery{
+        constructor(number1,number2,number3,number4,number5,number6) {
+            this.number1=number1;
+            this.number2=number2;
+            this.number3=number3;
+            this.number4=number4;
+            this.number5=number5;
+            this.number6=number6;
+        }
+        getNumber1(){
+            return this.number1;
+        }
+        setNumber1(num1){
+            this.number1 =num1;
+        }
+        getNumber2(){
+            return this.number2;
+        }
+        setNumber2(num2){
+            this.number2=num2;
+        }
+        getNumber3(){
+            return this.number3;
+        }
+        setNumber3(num3){
+            this.number3=num3;
+        }
+        getNumber4(){
+            return this.number4;
+        }
+        setNumber4(num4){
+            this.number4=num4;
+        }
+        getNumber5(){
+            return this.number5;
+        }
+        setNumber5(num5){
+            this.number5=num5;
+        }
+        getNumber6(){
+            return this.number6;
+        }
+        setNumber6(num6){
+            this.number6=num6;
         }
     }
-
-    function tinhtien() {
-        amount=document.getElementById('soluong').value;
-        tienphaitra.value=tienphaitra.value+money.value*amount;
+    let lottery=new Lottery();
+    let win=[12,23,34,45,56,67];
+    // let arr=[];
+    let count=0;
+    function muaVe(){
+        // for(let i=1;i<=6;i++){
+        //     let n=parseInt(prompt("Nhap so thu "+i+" cua ve so"));
+        //     arr.push(n)
+        // }
+        // document.getElementById("result").innerHTML=arr.join("");
+        document.getElementById("result").innerHTML=
+        '<input type="text" id="number1" style="width: 30px">'+
+        '<input type="text" id="number2" style="width: 30px">'+
+        '<input type="text" id="number3" style="width: 30px">'+
+        '<input type="text" id="number4" style="width: 30px">'+
+        '<input type="text" id="number5" style="width: 30px">'+
+        '<input type="text" id="number6" style="width: 30px">';
+        count++;
+        if(count>4){
+            alert("Ban da mua 4 lan")
+        }
     }
-    function tieptuc() {
-        tienphaitra.value= tienphaitra.value+"+"
+    function checkKetQua() {
+        let num1=parseInt(document.getElementById("number1").value);
+        let num2=parseInt(document.getElementById("number2").value);
+        let num3=parseInt(document.getElementById("number3").value);
+        let num4=parseInt(document.getElementById("number4").value);
+        let num5=parseInt(document.getElementById("number5").value);
+        let num6=parseInt(document.getElementById("number6").value);
+        lottery.setNumber1(num1);
+        lottery.setNumber2(num2);
+        lottery.setNumber3(num3);
+        lottery.setNumber4(num4);
+        lottery.setNumber5(num5);
+        lottery.setNumber6(num6);
+        if(lottery.getNumber1()===win[0]&&lottery.getNumber2()===win[1]&&lottery.getNumber3()===win[2]&&lottery.getNumber4()===win[3]&&lottery.getNumber5()===win[4]&&lottery.getNumber6()===win[5]){
+            alert("Chuc mung ban da trung giai nhat")
+        }
+        else if(lottery.getNumber1()!==win[0]&&lottery.getNumber2()===win[1]&&lottery.getNumber3()===win[2]&&lottery.getNumber4()===win[3]&&lottery.getNumber5()===win[4]&&lottery.getNumber6()===win[5]){
+            alert("Chuc mung ban da trung giai nhi")
+        }
+        else if(lottery.getNumber1()!==win[0]&&lottery.getNumber2()!==win[1]&&lottery.getNumber3()===win[2]&&lottery.getNumber4()===win[3]&&lottery.getNumber5()===win[4]&&lottery.getNumber6()===win[5]){
+            alert("Chuc mung ban da trung giai nhi")
+        }
+        else {
+            alert("Chuc ban may man lan sau")
+        }
     }
-    function tong(){
-        let newMoney=tienphaitra.value;
-        document.getElementById('sum').innerHTML=eval(newMoney)
-    }
-    // let newMoney=tienphaitra.value
-    // document.getElementById('sum').innerHTML=eval(newMoney)
-
-
-
 </script>
 </body>
 </html>

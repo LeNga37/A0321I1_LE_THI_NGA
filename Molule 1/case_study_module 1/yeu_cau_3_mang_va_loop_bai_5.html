@@ -10,12 +10,12 @@
 <i><b>Bước 1:</b> Chọn đồ uống bằng cách nhấn vào nút tên đồ uống.</i><br/>
 <i><b>Bước 2:</b> Chọn số lượng.</i><br/>
 <i><b>Bước 3:</b> Ấn nút "Giá tiền đồ uống đã gọi". Sau khi ấn nếu bạn muốn gọi thêm đồ uống thì ấn nút "Tiếp tục". Muốn kết thúc quá trình gọi món thì ấn nút "Tính tiền".</i><br/><br/>
-<button type="button" onclick="choice('Cafe')">1: Cafe</button>
-<button type="button" onclick="choice('Orange juice')">2: Orange juice</button>
-<button type="button" onclick="choice('Carrot juice')">3: Carrot juice</button>
-<button type="button" onclick="choice('Tomato juice')">4: Tomato juice</button>
-<button type="button" onclick="choice('Water')">5: Water</button>
-<button type="button" onclick="choice('Coconut juice')">6: Coconut juice</button><br/><br/>
+<button type="button" onclick="choose('Cafe')">1: Cafe</button>
+<button type="button" onclick="choose('Orange juice')">2: Orange juice</button>
+<button type="button" onclick="choose('Carrot juice')">3: Carrot juice</button>
+<button type="button" onclick="choose('Tomato juice')">4: Tomato juice</button>
+<button type="button" onclick="choose('Water')">5: Water</button>
+<button type="button" onclick="choose('Coconut juice')">6: Coconut juice</button><br/><br/>
 <!--<button type="button" onclick="choice('Break')">7: Break</button><br/><br/>-->
 <span>Đồ uống bạn đã chọn: </span>
 <input type="text" id="result"/><br/><br/>
@@ -32,8 +32,8 @@
 <script>
     let result=document.getElementById('result');
     let soluong;
-    function choice(choice) {
-        result.value=choice;
+    function choose(choose) {
+        result.value=choose;
         switch (result.value) {
             case 'Cafe':
                 money.value=25000;
@@ -54,6 +54,8 @@
             case 'Coconut juice':
                 money.value=35000;
                 break;
+            default:
+                alert("Chon do uong")
             // case 'Break':
             //     let newMoney=tienphaitra.value;
             //     document.getElementById('sum').innerHTML=eval(newMoney);

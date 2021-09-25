@@ -39,9 +39,9 @@
             return this.age;
         }
 
-        toString() {
-            return "1." + this.id + "\n2." + this.name + "\n3." + this.age;
-        }
+        // toString() {
+        //     return "1." + this.id + "\n2." + this.name + "\n3." + this.age;
+        // }
     }
 
     let listStudent = [];
@@ -71,7 +71,7 @@
     function editStudent(index) {
         let check = true;
         while (check) {
-            let choose = prompt("Chọn thuộc tính cấn sửa\n+" +
+            let choose = prompt("Chọn thuộc tính cấn sửa\n" +
                 "1.ID\n" +
                 "2.Name\n" +
                 "3.Age\n" +
@@ -97,23 +97,25 @@
     }
     function display(list) {
         let tableString = '<table border="1">\n' +
-            '    <tr>\n' +
-            '        <td>STT</td>\n' +
-            '        <td>ID</td>\n' +
-            '        <td>Name</td>\n' +
-            '        <td>Age</td>\n' +
+            '<tr>\n' +
+            '<td>STT</td>\n' +
+            '<td>ID</td>\n' +
+            '<td>Name</td>\n' +
+            '<td>Age</td>\n' +
             '<td>edit</td> ' +
-            '<td>delete</td> '
-        '    </tr>';
+            '<td>delete</td> '+
+            '</tr>';
         for (let i = 0; i < list.length; i++) {
             tableString += ' <tr>\n' +
-                '        <td>' + (1 + i) + '</td>\n' +
-                '        <td>' + list[i].getId() + '</td>\n' +
-                '        <td>' + list[i].getName() + '</td>\n' +
-                '        <td>' + list[i].getAge() + '</td>\n' +
+                '<td>' + (1 + i) + '</td>\n' +
+                '<td>' + list[i].getId() + '</td>\n' +
+                '<td>' + list[i].getName() + '</td>\n' +
+                '<td>' + list[i].getAge() + '</td>\n' +
                 '<td><input type="button" value="edit" onclick="editStudent(' + i + ')"></td>' +
                 '<td><input type="button" value="delete" onclick="deleteStudent(' + i + ')"></td>' +
-                '    </tr>';
+                // '<td><input type="button" value="edit" onclick="editStudent()"></td>' +
+                // '<td><input type="button" value="delete" onclick="deleteStudent()"></td>' +
+                '</tr>';
         }
         tableString += "</table>";
         document.getElementById("ketQua").innerHTML = tableString;

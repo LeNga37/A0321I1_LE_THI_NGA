@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_2</title>
+</head>
+<body>
+    <script>
+        function checkNumber(num) {
+            let sum=0;
+            let check=false;
+            for(let i=1;i<=num/2;i++){
+                if(num%i===0){
+                    sum+=i;
+                }
+            }
+            if(sum===num){
+                check=true;
+            }
+            document.write(check);
+        }
+        let number=prompt("Nhập số nguyên dương cần kiểm tra");
+        let num=parseInt(number);
+        if(isNaN(num)||num<=0){
+            alert("Hãy nhập số nguyên lớn hơn 0")
+        }
+        checkNumber(num);
+    </script>
+</body>
+</html>

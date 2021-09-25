@@ -5,84 +5,59 @@
     <title>Title</title>
 </head>
 <body>
-<script>
-    let so = prompt('nhập số:');
-    let arr = so.split('');
-    for (let i = 0; i < arr.length; i++) {
-        switch (parseInt(arr[i])) {
-            case 0:
-                document.write('không ');
-                break;
-            case 1:
-                document.write('một ');
-                break;
-            case 2:
-                document.write('hai ');
-                break;
-            case 3:
-                document.write('ba ');
-                break;
-            case 4:
-                document.write('bốn ');
-                break;
-            case 5:
-                document.write('năm ');
-                break;
-            case 6:
-                document.write('sáu ');
-                break;
-            case 7:
-                document.write('bảy ');
-                break;
-            case 8:
-                document.write('tám ');
-                break;
-            case 9:
-                document.write('chín ');
-                break;
-            default:
-                document.write('So da nhap khong hop le!');
-        }
-    }
-</script>
 <!--<script>-->
-<!--    class SwitchButton {-->
-<!--        constructor(status){-->
-<!--            this.status = status;-->
-<!--        };-->
-<!--        setStatus = function (newStatus) {-->
-<!--            this.status = newStatus;-->
-<!--        } ;-->
-<!--        getStatus = function () {-->
-<!--            return this.status;-->
-<!--        };-->
-<!--        turnOnOff = function () {-->
-<!--            this.status = !this.status;-->
+<!--    let array = [];-->
+<!--    function enterNumber(arr) {-->
+<!--        for (let i = 0; i < 5; i++){-->
+<!--            arr[i] = parseInt(prompt("Enter the element " + i));-->
 <!--        }-->
-<!--    };-->
-<!--    class Lamp {-->
-<!--        constructor(switchButton) {-->
+<!--    }-->
+<!--    function displayArray(arr) {-->
+<!--        document.write("<br>");-->
+<!--        for (let i = 0; i < arr.length; i++){-->
+<!--            document.write(arr[i] + " ");-->
 <!--        }-->
-<!--        onLight = function () {-->
-<!--            if (switchButton1.getStatus() === true) {-->
-<!--                document.getElementById("lamp").src = "https://www.w3schools.com/html/pic_bulbon.gif";-->
-<!--                document.getElementById("result").innerHTML = "Bóng đèn đang bật";-->
-
-<!--            }else {-->
-<!--                document.getElementById("lamp").src = "https://www.w3schools.com/html/pic_bulboff.gif";-->
-<!--                document.getElementById("result").innerHTML = "Bóng đèn đang tắt";-->
+<!--        // document.write("<br>");-->
+<!--    }-->
+<!--    function insertionSort(arr){-->
+<!--        for (let i = 0; i < arr.length; i++){-->
+<!--            for (let j = i + 1; j < arr.length; j++){-->
+<!--                if (arr[i] > arr[j]){-->
+<!--                    let temp = arr[i];-->
+<!--                    arr[i] = arr[j];-->
+<!--                    arr[j] = temp;-->
+<!--                }-->
 <!--            }-->
-
 <!--        }-->
-
-<!--    };-->
-
-<!--    let switchButton1 = new SwitchButton(false);-->
-<!--    let lamp = new Lamp(switchButton1);-->
-<!--    function turnOn_turnOff_lamp(){-->
-<!--        switchButton1.turnOnOff();-->
-<!--        lamp.onLight();-->
-<!--    };-->
+<!--    }-->
+<!--    enterNumber(array);-->
+<!--    insertionSort(array);-->
+<!--    displayArray(array);-->
 <!--</script>-->
+<script>
+    let arr = [];
+    for ( let i = 0 ; i < 5 ; i++ ) {
+        let number = parseInt(prompt(' Nhap vao so tai vi tri :' +i));
+        arr[i] = number;
+    }
+    for ( let i = 0; i < arr.length ; i++) {
+        document.write(arr[i]+'<br>');
+    }
+    //Sap xep mang.
+    document.write('Mang Sau Khi Sap Xep:' + '<br>')
+    for ( let i = 0; i < arr.length ; i++ ){
+        for ( let j = i+1; j < arr.length; j++){
+            let temp;
+            if ( arr[i] > arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        document.write(arr[i] + '<br>')
+    }
+
+
+</script>
 </body>
 </html>

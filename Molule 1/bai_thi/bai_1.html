@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_1</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+        let str=prompt("Nhập số nguyên, mỗi số nguyên cách nhau dấu cách");
+        let arr=str.split(" ");
+        let newArr=[];
+        let sum=0;
+        let avg;
+        document.getElementById("result").innerHTML="Mảng bạn đã nhập là: ["+arr+"]";
+        if(arr.length>50){
+            alert("Bạn đã nhập quá 50 phần tử");
+        }
+        for(let i=0;i<arr.length;i++){
+            let num=parseInt(arr[i]);
+            if(isNaN(num)){
+                alert(arr[i]+" không phải là số nguyên")
+            }
+            if(num%3===0){
+                newArr.push(num);
+            }
+        }
+        for(let j=0;j<newArr.length;j++){
+            sum=sum+newArr[j];
+        }
+        avg=sum/newArr.length;
+        document.getElementById("result").innerHTML=result.innerHTML+"<br>"+"Trung bình cộng của các số chia hết cho 3 là: "+avg;
+    </script>
+</body>
+</html>
